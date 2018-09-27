@@ -1,10 +1,11 @@
-FROM nginx:alpine
+FROM node:8.11
 
-COPY nginx.conf /etc/nginx/nginx.conf
-COPY vhost.conf /etc/nginx/conf.d/default.conf
+RUN npm i -g serve
 
 ONBUILD COPY . /app
 
-CMD nginx -g 'daemon off;';
+WORKDIR /app
 
-EXPOSE 80
+CMD serve -n -c liara.json
+
+EXPOSE 5000
