@@ -1,4 +1,4 @@
-FROM nginx:alpine
+FROM nginx
 
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY default_liara_nginx.conf /etc/nginx/conf.d/liara_nginx.conf
